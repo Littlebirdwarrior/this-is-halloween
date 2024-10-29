@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(27, 23, 23);
+    color: #fff
+}
+
+h1{
+    text-align: center;
+}
+
+.container{
+    width: fit-content;
+   margin-inline: auto ;
+
+}
+.wrapper{
+    display: grid;
+    grid-template-areas:    "one"
+                            "two"
+                            "tree";
+}
+
+.one{
+    grid-area: one;
+}
+
+.two{
+    grid-area: two;
+}
+.tree{
+    grid-area: tree;
+}
+
+.moveBox:hover {
+    animation: moveBox 2s linear infinite;
+}
+
+@keyframes moveBox {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-100px, -100px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
