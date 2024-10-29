@@ -1,47 +1,84 @@
 body {
-    background-color: rgb(27, 23, 23);
-    color: #fff
+  background-color: rgb(27, 23, 23);
+  color: #fff;
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-.container{
-    width: fit-content;
-   margin-inline: auto ;
-
+.container {
+  width: fit-content;
+  margin-inline: auto;
 }
-.wrapper{
-    display: grid;
-    grid-template-areas:    "one"
-                            "two"
-                            "tree";
+.wrapper {
+  display: grid;
+  grid-template-areas: "one";
 }
 
-.one{
-    grid-area: one;
+.one {
+  grid-area: one;
 }
 
-.two{
-    grid-area: two;
+.two {
+  grid-area: two;
 }
-.tree{
-    grid-area: tree;
+.tree {
+  grid-area: tree;
+}
+
+.eyes {
+position: relative;
+}
+
+.eyes::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f5dd7f; /* Couleur de base de la boule lumineuse */
+  opacity: 0.6;
+  filter: blur(2px); /* Flou pour le halo lumineux */
+  border-radius: 50%;
+  animation: pulsate 3s ease-in-out infinite;
+  z-index: 100;
+}
+
+.eye-left{
+    left: 10px;
+    bottom: 100;
+}
+
+.eye-right{
+    left: 20px;
+    bottom: -200px;
 }
 
 .moveBox:hover {
-    animation: moveBox 2s linear infinite;
+  animation: moveBox 2s linear infinite;
 }
 
 @keyframes moveBox {
-    0% {
-      transform: translate(0, 0);
-    }
-    50% {
-      transform: translate(-100px, -100px);
-    }
-    100% {
-      transform: translate(0, 0);
-    }
+  0% {
+    transform: translate(0, 0);
   }
+  50% {
+    transform: translate(-100px, -100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes pulsate {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+}
